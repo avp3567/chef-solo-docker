@@ -1,0 +1,108 @@
+Generated at 2019-03-26 09:19:30 +0000
+Mixlib::ShellOut::ShellCommandFailed: bash[Docker-compose] (docker-test::run_app line 1) had an error: Mixlib::ShellOut::ShellCommandFailed: Expected process to exit with [0], but received '1'
+---- Begin output of "bash"  "/tmp/chef-script20190326-3032-l0in1b" ----
+STDOUT: 1.11: Pulling from library/nginx
+latest: Pulling from library/httpd
+STDERR: Creating network "files_default" with the default driver
+Pulling proxy (nginx:1.11)...
+Pulling web (httpd:)...
+Creating files_proxy_1 ... 
+Creating files_web_1   ... 
+[2A[2KCreating files_proxy_1 ... [31merror[0m[2B
+ERROR: for files_proxy_1  Cannot start service proxy: OCI runtime create failed: container_linux.go:344: starting container process caused "process_linux.go:424: container init caused \"rootfs_linux.go:58: mounting \\\"/var/chef/solo/cookbooks/docker-test/files/nginx.conf\\\" to rootfs \\\"/var/lib/docker/overlay2/8d813ed9ba9f8e97b9adb07df4c7610a1be46868c2783448205f3aa3193b902b/merged\\\" at \\\"/var/lib/docker/overlay2/8d813ed9ba9f8e97b9adb07df4c7610a1be46868c2783448205f3aa3193b902b/merged/etc/nginx/conf.d/default.conf\\\" caused \\\"not a directory\\\"\"": unknown: Are you trying to mount a directory onto a file (or vice-versa)? Check if the specified host path exists and is the expected type
+[1A[2KCreating files_web_1   ... [32mdone[0m[1B
+ERROR: for proxy  Cannot start service proxy: OCI runtime create failed: container_linux.go:344: starting container process caused "process_linux.go:424: container init caused \"rootfs_linux.go:58: mounting \\\"/var/chef/solo/cookbooks/docker-test/files/nginx.conf\\\" to rootfs \\\"/var/lib/docker/overlay2/8d813ed9ba9f8e97b9adb07df4c7610a1be46868c2783448205f3aa3193b902b/merged\\\" at \\\"/var/lib/docker/overlay2/8d813ed9ba9f8e97b9adb07df4c7610a1be46868c2783448205f3aa3193b902b/merged/etc/nginx/conf.d/default.conf\\\" caused \\\"not a directory\\\"\"": unknown: Are you trying to mount a directory onto a file (or vice-versa)? Check if the specified host path exists and is the expected type
+Encountered errors while bringing up the project.
+---- End output of "bash"  "/tmp/chef-script20190326-3032-l0in1b" ----
+Ran "bash"  "/tmp/chef-script20190326-3032-l0in1b" returned 1
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/mixlib-shellout-2.4.4/lib/mixlib/shellout.rb:297:in `invalid!'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/mixlib-shellout-2.4.4/lib/mixlib/shellout.rb:284:in `error!'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/mixin/shell_out.rb:202:in `shell_out_compacted!'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/mixin/shell_out.rb:124:in `shell_out!'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/provider/execute.rb:58:in `block in action_run'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/mixin/why_run.rb:51:in `add_action'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/provider.rb:227:in `converge_by'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/provider/execute.rb:56:in `action_run'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/provider/script.rb:64:in `action_run'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/provider.rb:182:in `run_action'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/resource.rb:578:in `run_action'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/runner.rb:70:in `run_action'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/runner.rb:98:in `block (2 levels) in converge'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/runner.rb:98:in `each'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/runner.rb:98:in `block in converge'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/resource_collection/resource_list.rb:94:in `block in execute_each_resource'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/resource_collection/stepable_iterator.rb:114:in `call_iterator_block'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/resource_collection/stepable_iterator.rb:85:in `step'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/resource_collection/stepable_iterator.rb:103:in `iterate'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/resource_collection/stepable_iterator.rb:55:in `each_with_index'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/resource_collection/resource_list.rb:92:in `execute_each_resource'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/runner.rb:97:in `converge'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/client.rb:720:in `block in converge'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/client.rb:715:in `catch'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/client.rb:715:in `converge'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/client.rb:754:in `converge_and_save'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/client.rb:286:in `run'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/application.rb:303:in `run_with_graceful_exit_option'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/application.rb:279:in `block in run_chef_client'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/local_mode.rb:44:in `with_server_connectivity'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/application.rb:261:in `run_chef_client'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/application/client.rb:444:in `run_application'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/application.rb:66:in `run'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/application/solo.rb:224:in `run'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/bin/chef-solo:24:in `<top (required)>'
+/usr/bin/chef-solo:306:in `load'
+/usr/bin/chef-solo:306:in `<main>'
+
+>>>> Caused by Mixlib::ShellOut::ShellCommandFailed: Expected process to exit with [0], but received '1'
+---- Begin output of "bash"  "/tmp/chef-script20190326-3032-l0in1b" ----
+STDOUT: 1.11: Pulling from library/nginx
+latest: Pulling from library/httpd
+STDERR: Creating network "files_default" with the default driver
+Pulling proxy (nginx:1.11)...
+Pulling web (httpd:)...
+Creating files_proxy_1 ... 
+Creating files_web_1   ... 
+[2A[2KCreating files_proxy_1 ... [31merror[0m[2B
+ERROR: for files_proxy_1  Cannot start service proxy: OCI runtime create failed: container_linux.go:344: starting container process caused "process_linux.go:424: container init caused \"rootfs_linux.go:58: mounting \\\"/var/chef/solo/cookbooks/docker-test/files/nginx.conf\\\" to rootfs \\\"/var/lib/docker/overlay2/8d813ed9ba9f8e97b9adb07df4c7610a1be46868c2783448205f3aa3193b902b/merged\\\" at \\\"/var/lib/docker/overlay2/8d813ed9ba9f8e97b9adb07df4c7610a1be46868c2783448205f3aa3193b902b/merged/etc/nginx/conf.d/default.conf\\\" caused \\\"not a directory\\\"\"": unknown: Are you trying to mount a directory onto a file (or vice-versa)? Check if the specified host path exists and is the expected type
+[1A[2KCreating files_web_1   ... [32mdone[0m[1B
+ERROR: for proxy  Cannot start service proxy: OCI runtime create failed: container_linux.go:344: starting container process caused "process_linux.go:424: container init caused \"rootfs_linux.go:58: mounting \\\"/var/chef/solo/cookbooks/docker-test/files/nginx.conf\\\" to rootfs \\\"/var/lib/docker/overlay2/8d813ed9ba9f8e97b9adb07df4c7610a1be46868c2783448205f3aa3193b902b/merged\\\" at \\\"/var/lib/docker/overlay2/8d813ed9ba9f8e97b9adb07df4c7610a1be46868c2783448205f3aa3193b902b/merged/etc/nginx/conf.d/default.conf\\\" caused \\\"not a directory\\\"\"": unknown: Are you trying to mount a directory onto a file (or vice-versa)? Check if the specified host path exists and is the expected type
+Encountered errors while bringing up the project.
+---- End output of "bash"  "/tmp/chef-script20190326-3032-l0in1b" ----
+Ran "bash"  "/tmp/chef-script20190326-3032-l0in1b" returned 1
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/mixlib-shellout-2.4.4/lib/mixlib/shellout.rb:297:in `invalid!'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/mixlib-shellout-2.4.4/lib/mixlib/shellout.rb:284:in `error!'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/mixin/shell_out.rb:202:in `shell_out_compacted!'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/mixin/shell_out.rb:124:in `shell_out!'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/provider/execute.rb:58:in `block in action_run'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/mixin/why_run.rb:51:in `add_action'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/provider.rb:227:in `converge_by'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/provider/execute.rb:56:in `action_run'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/provider/script.rb:64:in `action_run'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/provider.rb:182:in `run_action'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/resource.rb:578:in `run_action'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/runner.rb:70:in `run_action'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/runner.rb:98:in `block (2 levels) in converge'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/runner.rb:98:in `each'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/runner.rb:98:in `block in converge'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/resource_collection/resource_list.rb:94:in `block in execute_each_resource'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/resource_collection/stepable_iterator.rb:114:in `call_iterator_block'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/resource_collection/stepable_iterator.rb:85:in `step'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/resource_collection/stepable_iterator.rb:103:in `iterate'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/resource_collection/stepable_iterator.rb:55:in `each_with_index'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/resource_collection/resource_list.rb:92:in `execute_each_resource'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/runner.rb:97:in `converge'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/client.rb:720:in `block in converge'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/client.rb:715:in `catch'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/client.rb:715:in `converge'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/client.rb:754:in `converge_and_save'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/client.rb:286:in `run'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/application.rb:303:in `run_with_graceful_exit_option'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/application.rb:279:in `block in run_chef_client'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/local_mode.rb:44:in `with_server_connectivity'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/application.rb:261:in `run_chef_client'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/application/client.rb:444:in `run_application'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/application.rb:66:in `run'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/lib/chef/application/solo.rb:224:in `run'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.10.9/bin/chef-solo:24:in `<top (required)>'
+/usr/bin/chef-solo:306:in `load'
+/usr/bin/chef-solo:306:in `<main>'
